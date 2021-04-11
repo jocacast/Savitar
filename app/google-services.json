@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "610260240698",
+    "project_id": "savitar-5434b",
+    "storage_bucket": "savitar-5434b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610260240698:android:401845a264dadc528fe803",
+        "android_client_info": {
+          "package_name": "com.example.savitar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610260240698-em22i4svvnjfd99rfog42hbi032bvc6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.savitar",
+            "certificate_hash": "ded2669b976304ffaa2cd9ee54adf3547b0ffe09"
+          }
+        },
+        {
+          "client_id": "610260240698-1k9nsd2cbt48okjn1m2qdkf30apub2be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvhVVt7QGWQrTxqiN5y4t_gaziIzVtOB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610260240698-1k9nsd2cbt48okjn1m2qdkf30apub2be.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
