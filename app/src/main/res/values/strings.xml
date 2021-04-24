@@ -13,4 +13,10 @@
     <string name="already_registered_login_here">Already Registered? Login Here</string>
     <string name="address">Address</string>
     <string name="resend_email">Resend Email</string>
+    <string name="my_visits">My Visits</string>
+    <string name="Profile">My Profile</string>
+    <string name="addVisitor">Add Visitor</string>
+    <string name="editVisitor">Edit Visitor</string>
+    <string name="guestList">My Guest List</string>
+    <string name="next">Next</string>
 </resources>

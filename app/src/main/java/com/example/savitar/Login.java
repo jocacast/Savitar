@@ -16,13 +16,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "Login";
@@ -52,7 +48,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "Login onStart");
         validateCurrentUser();
     }
 
@@ -96,7 +91,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 progressBar.setVisibility(View.GONE);
                 if(fAuth.getCurrentUser().isEmailVerified()){
                     Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                 }else{
                     Intent i = new Intent(Login.this, ConfirmEmail.class);
@@ -117,7 +112,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void validateCurrentUser(){
         if(fAuth.getCurrentUser() != null){
             if(fAuth.getCurrentUser().isEmailVerified()){
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }else{
                 Log.d(TAG, "User exists, email not verified, keep in Login Activity");

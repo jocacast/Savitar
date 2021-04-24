@@ -9,16 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".ConfirmEmail"></activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Login">
+        <activity android:name=".GuardProfileActivity"
+            android:screenOrientation = "portrait"></activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".EditVisitor"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".VisitorsList"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".CreateVisitor"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".ConfirmEmail"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".Register"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".Login"
+            android:screenOrientation = "portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ProfileActivity"
+            android:screenOrientation = "portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

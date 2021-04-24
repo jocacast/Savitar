@@ -31,7 +31,7 @@ public class ConfirmEmail extends AppCompatActivity implements View.OnClickListe
         String emailAddress = getIntent().getStringExtra("emailAddress");
         String message = "Please click on the link sent to " + emailAddress + " and then Login";
 
-        mTitle = findViewById(R.id.textView);
+        mTitle = findViewById(R.id.textView_title);
         mSubtitle = findViewById(R.id.textView2);
         sendCode = findViewById(R.id.sendCodeBtn);
         login = findViewById(R.id.loginBtn);
