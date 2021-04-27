@@ -20,4 +20,5 @@
     <string name="guestList">My Guest List</string>
     <string name= "visitorsList">Visitors List</string>
     <string name="next">Next</string>
+    <string name="condominium_title">Condominium</string>
 </resources>

@@ -65,6 +65,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         Toolbar myToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         addGuest.setOnClickListener(this);
         editProfile.setOnClickListener(this);
         changePassword.setOnClickListener(this);
@@ -107,14 +112,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         int itemId = item.getItemId();
         if(itemId == R.id.logout){
             logout();
-        }else if (itemId == R.id.visitors_list){
+        }else if (itemId== android.R.id.home) {
+            finishActivity();
+        }else if(itemId == R.id.visitors_list){
             showVisitors();
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
     @Override
     public void onClick(View v){
@@ -122,11 +126,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if(viewId == R.id.createText){
             startActivity(new Intent(getApplicationContext(),Register.class));
         }else if (viewId== R.id.showVisitorListBtn){
-            Intent intent = new Intent(getBaseContext(), VisitorsList.class);
-            intent.putExtra("condominium", cond);
-            intent.putExtra("addressForSelectedCond", addressForSelectedCond);
-            intent.putExtra("isGuard", false);
-            startActivity(intent);
+            showVisitors();
         }else if(viewId == R.id.editProfile){
             Log.d(TAG, "Show Edit Profile View");
         }else if (viewId == R.id.changePass){
@@ -183,7 +183,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         passwordResetDialog.create().show();
     }
 
-    public void logout(){
+    private void logout(){
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
@@ -192,7 +192,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onBackPressed(){
         finish();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finishActivity();
+    }
+
+    private void finishActivity(){
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
+        intent.putExtra("condominium", cond);
+        startActivity(intent);
         overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left);
     }
 

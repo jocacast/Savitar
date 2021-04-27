@@ -69,6 +69,11 @@ public class GuardProfileActivity extends AppCompatActivity implements View.OnCl
         Toolbar myToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         showVisitorsListBtn.setOnClickListener(this);
         editProfile.setOnClickListener(this);
         changePassword.setOnClickListener(this);
@@ -113,6 +118,8 @@ public class GuardProfileActivity extends AppCompatActivity implements View.OnCl
             logout();
         }else if (itemId == R.id.visitors_list){
             showVisitors();
+        }else if (itemId== android.R.id.home) {
+            finishActivity();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -196,7 +203,13 @@ public class GuardProfileActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onBackPressed(){
         finish();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finishActivity();
+    }
+
+    private void finishActivity(){
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
+        intent.putExtra("condominium", cond);
+        startActivity(intent);
         overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left);
     }
 }
