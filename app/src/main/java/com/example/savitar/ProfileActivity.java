@@ -37,6 +37,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     String userId, cond, addressForSelectedCond;
     FirebaseUser user;
     Button addGuest, editProfile, changePassword;
+    boolean isGuard;
     Host host;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +47,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         cond = getIntent().getStringExtra("condominium");
         addressForSelectedCond = getIntent().getStringExtra("addressForSelectedCond");
+        isGuard = getIntent().getBooleanExtra("isGuard", false);
 
-        phone = findViewById(R.id.hostPhone);
-        fullName = findViewById(R.id.visitorName);
-        email    = findViewById(R.id.visitorLicencePlates);
-        address = findViewById(R.id.hostAddress);
+        phone = findViewById(R.id.guardPhone);
+        fullName = findViewById(R.id.guardName);
+        email    = findViewById(R.id.guardEmailAddress);
+        address = findViewById(R.id.guardAddress);
         addGuest = findViewById(R.id.showVisitorListBtn);
         editProfile = findViewById(R.id.editProfile);
         changePassword = findViewById(R.id.changePass);

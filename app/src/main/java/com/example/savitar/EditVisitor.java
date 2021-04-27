@@ -49,10 +49,10 @@ public class EditVisitor extends AppCompatActivity implements View.OnClickListen
         Log.d(TAG, "Get extra condominium " + visitor.getCondominium());
         Log.d(TAG, "Get extra addressForSelectedCond " + visitor.getHostAddress());
 
-        visitorNameEditText = findViewById(R.id.visitorName);
-        visitorLicencePlatesEditText = findViewById(R.id.visitorLicencePlates);
-        hostPhoneTextView = findViewById(R.id.hostPhone);
-        hostAddressTextView = findViewById(R.id.hostAddress);
+        visitorNameEditText = findViewById(R.id.guardName);
+        visitorLicencePlatesEditText = findViewById(R.id.guardEmailAddress);
+        hostPhoneTextView = findViewById(R.id.guardPhone);
+        hostAddressTextView = findViewById(R.id.guardAddress);
         saveBtn = findViewById(R.id.showVisitorListBtn);
         deleteBtn = findViewById(R.id.deleteGuest);
         isAllowedSwitch = findViewById(R.id.switch1);

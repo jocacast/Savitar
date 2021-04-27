@@ -46,10 +46,10 @@ public class CreateVisitor extends AppCompatActivity implements View.OnClickList
         cond = getIntent().getStringExtra("condominium");
         addressForSelectedCond = getIntent().getStringExtra("addressForSelectedCond");
 
-        visitorNameEditText = findViewById(R.id.visitorName);
-        visitorLicencePlatesEditText = findViewById(R.id.visitorLicencePlates);
-        hostPhoneTextView = findViewById(R.id.hostPhone);
-        hostAddressTextView = findViewById(R.id.hostAddress);
+        visitorNameEditText = findViewById(R.id.guardName);
+        visitorLicencePlatesEditText = findViewById(R.id.guardEmailAddress);
+        hostPhoneTextView = findViewById(R.id.guardPhone);
+        hostAddressTextView = findViewById(R.id.guardAddress);
         saveBtn = findViewById(R.id.showVisitorListBtn);
 
 

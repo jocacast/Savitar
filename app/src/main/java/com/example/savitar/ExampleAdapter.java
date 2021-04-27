@@ -31,15 +31,17 @@ public class ExampleAdapter extends
     }
 
     class ExampleViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewVisitorName, textViewLicencePlates, textViewHostName, testViewHostAddress, textViewHostPhoneNumber;
+        TextView textViewVisitorName, textViewLicencePlates, textViewHostName, testViewHostAddress, textViewHostPhoneNumber, textViewHostPhoneTag, textViewHostNameTag;
         ExampleViewHolder(View itemView) {
             super(itemView);
             textViewVisitorName = itemView.findViewById(R.id.list_visitor_name);
             textViewLicencePlates = itemView.findViewById(R.id.list_licence_plates);
-            textViewHostName = itemView.findViewById(R.id.list_host_name);
             testViewHostAddress = itemView.findViewById(R.id.list_host_address);
             textViewHostPhoneNumber = itemView.findViewById(R.id.list_host_phone_number);
+            textViewHostName = itemView.findViewById(R.id.list_host_name);
 
+            textViewHostPhoneTag = itemView.findViewById(R.id.host_phone_number);
+            textViewHostNameTag = itemView.findViewById(R.id.host_name);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -79,9 +81,17 @@ public class ExampleAdapter extends
         holder.setHolderColor(model);
         holder.textViewVisitorName.setText(model.getName());
         holder.textViewLicencePlates.setText(model.getLicensePlates());
-        holder.textViewHostName.setText(model.getHostName());
         holder.testViewHostAddress.setText(model.getHostAddress());
-        holder.textViewHostPhoneNumber.setText(model.getHostPhoneNo());
+        if (isGuard){
+            holder.textViewHostPhoneNumber.setText(model.getHostPhoneNo());
+            holder.textViewHostName.setText(model.getHostName());
+        }else{
+            holder.textViewHostPhoneTag.setVisibility(View.GONE);
+            holder.textViewHostNameTag.setVisibility(View.GONE);
+            holder.textViewHostPhoneNumber.setVisibility(View.GONE);
+            holder.textViewHostName.setVisibility(View.GONE);
+        }
+
     }
     @Override
     public int getItemCount() {
@@ -99,7 +109,7 @@ public class ExampleAdapter extends
                 String pattern=constraint.toString().toLowerCase().trim();
                 for(Visitor item :exampleListFull){
                     if(isGuard){
-                        if(item.getName().toLowerCase().contains(pattern) || item.getLicensePlates().toLowerCase().contains(pattern)){
+                        if(item.getName().toLowerCase().contains(pattern) || item.getLicensePlates().toLowerCase().contains(pattern)|| item.getHostAddress().contains(pattern)){
                             filterList.add(item);
                         }
                     }else{

@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
     <TextView
-        android:id="@+id/visitorName"
+        android:id="@+id/guardName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -102,10 +102,10 @@
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/visitorName" />
+        app:layout_constraintTop_toBottomOf="@+id/guardName" />
 
     <TextView
-        android:id="@+id/visitorLicencePlates"
+        android:id="@+id/guardEmailAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -134,10 +134,10 @@
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/visitorLicencePlates" />
+        app:layout_constraintTop_toBottomOf="@+id/guardEmailAddress" />
 
     <TextView
-        android:id="@+id/hostPhone"
+        android:id="@+id/guardPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -166,11 +166,11 @@
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hostPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/guardPhone" />
 
 
     <TextView
-        android:id="@+id/hostAddress"
+        android:id="@+id/guardAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -192,12 +192,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:text="My Guest List"
+        android:text="Visitors List"
         app:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toTopOf="@+id/editProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hostAddress"
+        app:layout_constraintTop_toBottomOf="@+id/guardAddress"
         app:layout_constraintVertical_bias="0.59000003" />
 
     <Button

@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         i = new Intent(MainActivity.this, ProfileActivity.class);
                                     }
                                     i.putExtra("condominium", selected);
+                                    i.putExtra("isGuard", isGuard);
                                     i.putExtra("addressForSelectedCond", addressForSelectedCond);
                                     startActivity(i);
                                 }

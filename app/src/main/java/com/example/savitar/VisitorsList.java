@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,6 +39,7 @@ public class VisitorsList extends AppCompatActivity {
     ExampleAdapter exAdapter;
     private VisitorAdapter.OnItemClickListener listener;
     private List<Visitor> visitorList=new ArrayList<>();
+    TextView titleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,8 @@ public class VisitorsList extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         userId = fAuth.getCurrentUser().getUid();
         user = fAuth.getCurrentUser();
-
+        //Rest of items
+        TextView titleTextView = findViewById(R.id.textView2);
         Toolbar myToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
 
@@ -67,6 +70,7 @@ public class VisitorsList extends AppCompatActivity {
         FloatingActionButton addVisitor = findViewById(R.id.add_visitor);
         if(isGuard){
             addVisitor.setVisibility(View.INVISIBLE);
+            titleTextView.setText(R.string.visitorsList);
             fillExampleListGuard();
         }else{
             fillExampleList();
@@ -168,7 +172,7 @@ public class VisitorsList extends AppCompatActivity {
                             }
                             RecyclerView recyclerView = findViewById(R.id.recycler_view);
                             recyclerView.setHasFixedSize(true);
-                            exAdapter = new ExampleAdapter(visitorList, false);
+                            exAdapter = new ExampleAdapter(visitorList, isGuard);
                             recyclerView.setLayoutManager(new LinearLayoutManager(VisitorsList.this));
                             recyclerView.setAdapter(exAdapter);
                             exAdapter.setOnItemClickListener(new ExampleAdapter.OnItemClickListener() {
@@ -253,9 +257,15 @@ public class VisitorsList extends AppCompatActivity {
 
     private void finishActivity(){
         finish();
-        Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+        Intent i;
+        if(isGuard){
+            i = new Intent(VisitorsList.this, GuardProfileActivity.class);
+        }else{
+            i = new Intent(VisitorsList.this, ProfileActivity.class);
+        }
         i.putExtra("condominium", cond);
         i.putExtra("addressForSelectedCond",addressForSelectedCond);
+        i.putExtra("isGuard", isGuard);
         startActivity(i);
         overridePendingTransition(R.anim.left_to_right,R.anim.right_to_left);
     }
