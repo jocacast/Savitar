@@ -60,7 +60,7 @@ public class GuardProfileActivity extends AppCompatActivity implements View.OnCl
         fullName = findViewById(R.id.guardName);
         email    = findViewById(R.id.guardEmailAddress);
         address = findViewById(R.id.guardAddress);
-        showVisitorsListBtn = findViewById(R.id.showVisitorListBtn);
+        showVisitorsListBtn = findViewById(R.id.visitorsListBtn);
         editProfile = findViewById(R.id.editProfile);
         changePassword = findViewById(R.id.changePass);
 
@@ -132,7 +132,7 @@ public class GuardProfileActivity extends AppCompatActivity implements View.OnCl
         int viewId = v.getId();
         if(viewId == R.id.createText){
             startActivity(new Intent(getApplicationContext(),Register.class));
-        }else if (viewId== R.id.showVisitorListBtn){
+        }else if (viewId== R.id.visitorsListBtn){
             Intent intent = new Intent(getBaseContext(), VisitorsList.class);
             intent.putExtra("condominium", cond);
             intent.putExtra("addressForSelectedCond", addressForSelectedCond);

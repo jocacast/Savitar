@@ -53,7 +53,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         fullName = findViewById(R.id.guardName);
         email    = findViewById(R.id.guardEmailAddress);
         address = findViewById(R.id.guardAddress);
-        addGuest = findViewById(R.id.showVisitorListBtn);
+        addGuest = findViewById(R.id.visitorsListBtn);
         editProfile = findViewById(R.id.editProfile);
         changePassword = findViewById(R.id.changePass);
         fAuth = FirebaseAuth.getInstance();
@@ -125,7 +125,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         int viewId = v.getId();
         if(viewId == R.id.createText){
             startActivity(new Intent(getApplicationContext(),Register.class));
-        }else if (viewId== R.id.showVisitorListBtn){
+        }else if (viewId== R.id.visitorsListBtn){
             showVisitors();
         }else if(viewId == R.id.editProfile){
             Log.d(TAG, "Show Edit Profile View");

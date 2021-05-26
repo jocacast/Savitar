@@ -50,7 +50,7 @@ public class CreateVisitor extends AppCompatActivity implements View.OnClickList
         visitorLicencePlatesEditText = findViewById(R.id.guardEmailAddress);
         hostPhoneTextView = findViewById(R.id.guardPhone);
         hostAddressTextView = findViewById(R.id.guardAddress);
-        saveBtn = findViewById(R.id.showVisitorListBtn);
+        saveBtn = findViewById(R.id.visitorsListBtn);
 
 
         isAllowedSwitch = (SwitchCompat) findViewById(R.id.switch1);
@@ -96,7 +96,7 @@ public class CreateVisitor extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v){
         int viewId = v.getId();
-        if(viewId == R.id.showVisitorListBtn){
+        if(viewId == R.id.visitorsListBtn){
             saveVisitor();
         }
     }

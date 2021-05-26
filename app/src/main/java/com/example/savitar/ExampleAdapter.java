@@ -109,7 +109,7 @@ public class ExampleAdapter extends
                 String pattern=constraint.toString().toLowerCase().trim();
                 for(Visitor item :exampleListFull){
                     if(isGuard){
-                        if(item.getName().toLowerCase().contains(pattern) || item.getLicensePlates().toLowerCase().contains(pattern)|| item.getHostAddress().contains(pattern)){
+                        if(item.getName().toLowerCase().contains(pattern) || item.getLicensePlates().toLowerCase().contains(pattern)|| item.getHostAddress().toLowerCase().contains(pattern) || item.getHostName().toLowerCase().contains(pattern)){
                             filterList.add(item);
                         }
                     }else{

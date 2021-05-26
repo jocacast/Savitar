@@ -23,21 +23,20 @@
         android:layout_height="wrap_content"
         android:text="@string/savitar"
         android:textColor="#FFEB3B"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/profileImage"
+        android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="@string/addVisitor"
         android:textColor="#F7F7F8"
-        android:textSize="15sp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_title"
@@ -46,9 +45,12 @@
 
     <ImageView
         android:id="@+id/profileImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent=".25"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintHeight_default="percent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -62,14 +64,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Visitor Full Name"
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+        app:layout_constraintBottom_toTopOf="@id/guardName"/>
 
     <EditText
         android:id="@+id/guardName"
@@ -77,15 +79,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@id/textView4"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -93,14 +95,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Visitor Licence Plates"
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardName" />
+        app:layout_constraintTop_toBottomOf="@+id/guardName"
+        app:layout_constraintBottom_toTopOf="@id/guardEmailAddress"/>
 
     <EditText
         android:id="@+id/guardEmailAddress"
@@ -108,14 +110,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
@@ -124,14 +126,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Host Phone"
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/guardEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/guardPhone"/>
 
     <TextView
         android:id="@+id/guardPhone"
@@ -139,16 +141,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Host Phone"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@id/textView6"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -156,14 +158,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Host Address"
         android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/guardPhone"
+        app:layout_constraintBottom_toTopOf="@id/guardAddress"/>
 
 
     <TextView
@@ -172,19 +174,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Address"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/switch1"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allow entrance"
+        android:textColor="@color/white"
+        android:theme="@style/ThemeOverlay.MySwitchCompat"
+        app:layout_constraintBottom_toTopOf="@+id/visitorsListBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guardAddress"
+        app:layout_constraintVertical_bias="0.512"
+        app:thumbTint="@color/white" />
+
     <Button
-        android:id="@+id/showVisitorListBtn"
+        android:id="@+id/visitorsListBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -194,22 +210,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardAddress"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
         app:layout_constraintVertical_bias="0.59000003" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Allow entrance"
-        android:textColor="@color/white"
-        android:theme="@style/ThemeOverlay.MySwitchCompat"
-        app:layout_constraintBottom_toTopOf="@+id/showVisitorListBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardAddress"
-        app:layout_constraintVertical_bias="0.512"
-        app:thumbTint="@color/white" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
